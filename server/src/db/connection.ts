@@ -2,7 +2,7 @@ import { createPool } from 'mysql2'
 import dotenv from 'dotenv'
 import {LoginService} from '../login/login';
 
-dotenv.config({ path: '../.env' })
+dotenv.config({ path: './src/.env' })
 
 const pool = createPool({
   host: process.env.DB_HOST,
@@ -22,8 +22,3 @@ try {
 }
 
 export default pool;
-
-const loginService = new LoginService();
-loginService.loginUser({email: "a@a.com", password: "12345678"}).then(
-  () => {console.log('bern')}
-);

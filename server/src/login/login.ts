@@ -4,15 +4,8 @@ import jwt from  'jsonwebtoken'
 import bcrypt from 'bcrypt'
 import pool from '../db/connection';
 import dotenv from 'dotenv';
-dotenv.config({ path: `../.env` });
+dotenv.config({ path: `./src/.env` });
 
-interface LoginResponse {
-  id: number;
-  name: string;
-  email: string;
-  password_hash: string;
-  account_type: string;
-}
 
 @Injectable()
 export class LoginService {
